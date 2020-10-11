@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         print("Test code")
-        print("Real noob")
+        print("Try Merge")
     }
 
 
