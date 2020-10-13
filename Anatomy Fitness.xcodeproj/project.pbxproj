@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04592A97253522FD00F2F3EC /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04592A96253522FD00F2F3EC /* FrontViewController.swift */; };
+		04592A992535233E00F2F3EC /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04592A982535233E00F2F3EC /* BackViewController.swift */; };
 		A0CF430B2533AC1500680AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF430A2533AC1500680AAC /* AppDelegate.swift */; };
 		A0CF430D2533AC1500680AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF430C2533AC1500680AAC /* SceneDelegate.swift */; };
-		A0CF430F2533AC1500680AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF430E2533AC1500680AAC /* ViewController.swift */; };
+		A0CF430F2533AC1500680AAC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF430E2533AC1500680AAC /* MasterViewController.swift */; };
 		A0CF43122533AC1500680AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CF43102533AC1500680AAC /* Main.storyboard */; };
 		A0CF43142533AC2000680AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CF43132533AC2000680AAC /* Assets.xcassets */; };
 		A0CF43172533AC2000680AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0CF43152533AC2000680AAC /* LaunchScreen.storyboard */; };
@@ -35,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04592A96253522FD00F2F3EC /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		04592A982535233E00F2F3EC /* BackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		A0CF43072533AC1500680AAC /* Anatomy Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anatomy Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CF430A2533AC1500680AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0CF430C2533AC1500680AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0CF430E2533AC1500680AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0CF430E2533AC1500680AAC /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A0CF43112533AC1500680AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0CF43132533AC2000680AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CF43162533AC2000680AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 			children = (
 				A0CF430A2533AC1500680AAC /* AppDelegate.swift */,
 				A0CF430C2533AC1500680AAC /* SceneDelegate.swift */,
-				A0CF430E2533AC1500680AAC /* ViewController.swift */,
+				A0CF430E2533AC1500680AAC /* MasterViewController.swift */,
+				04592A96253522FD00F2F3EC /* FrontViewController.swift */,
+				04592A982535233E00F2F3EC /* BackViewController.swift */,
 				A0CF43102533AC1500680AAC /* Main.storyboard */,
 				A0CF43132533AC2000680AAC /* Assets.xcassets */,
 				A0CF43152533AC2000680AAC /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CF430F2533AC1500680AAC /* ViewController.swift in Sources */,
+				04592A97253522FD00F2F3EC /* FrontViewController.swift in Sources */,
+				A0CF430F2533AC1500680AAC /* MasterViewController.swift in Sources */,
 				A0CF430B2533AC1500680AAC /* AppDelegate.swift in Sources */,
+				04592A992535233E00F2F3EC /* BackViewController.swift in Sources */,
 				A0CF430D2533AC1500680AAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
