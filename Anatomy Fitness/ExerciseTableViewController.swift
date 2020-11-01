@@ -10,13 +10,15 @@ import UIKit
 
 
 class ExerciseTableViewController: UITableViewController {
-    var muscleData = -1
+    var muscleData = ""
     var postData: [myResult] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-           API().getExerciseByMuscle(muscle_num: "5") { (response) in
+           API().getExerciseByMuscle(muscle_num: muscleData) { (response) in
             self.postData=response.results
+            self.tableView.reloadData()
         }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

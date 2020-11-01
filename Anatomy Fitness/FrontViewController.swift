@@ -9,7 +9,7 @@
 import UIKit
 
 class FrontViewController: UIViewController {
-    var muscleID = -1
+    var muscleID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +17,7 @@ class FrontViewController: UIViewController {
     }
     
     @IBAction func btnPressed(_ sender: UIButton){
-        self.muscleID = sender.tag
+        self.muscleID = String(sender.tag)
         performSegue(withIdentifier: "fronter", sender: self)
     }
     
