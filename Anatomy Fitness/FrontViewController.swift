@@ -9,11 +9,21 @@
 import UIKit
 
 class FrontViewController: UIViewController {
-
+    var muscleID = -1
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func btnPressed(_ sender: UIButton){
+        self.muscleID = sender.tag
+        performSegue(withIdentifier: "fronter", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ExerciseTableViewController
+        vc.muscleData = self.muscleID
     }
     
 

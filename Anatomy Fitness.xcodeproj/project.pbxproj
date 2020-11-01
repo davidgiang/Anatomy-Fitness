@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04592A97253522FD00F2F3EC /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04592A96253522FD00F2F3EC /* FrontViewController.swift */; };
 		04592A992535233E00F2F3EC /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04592A982535233E00F2F3EC /* BackViewController.swift */; };
+		04CE48D5254F5CA4009B2698 /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE48D4254F5CA4009B2698 /* ExerciseTableViewController.swift */; };
+		04CE48D7254F65A1009B2698 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE48D6254F65A1009B2698 /* ExerciseTableViewCell.swift */; };
 		A0A125872549E6B90028EF1E /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A125862549E6B90028EF1E /* RestAPI.swift */; };
 		A0A125892549EB9A0028EF1E /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A125882549EB9A0028EF1E /* PostList.swift */; };
 		A0CF430B2533AC1500680AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF430A2533AC1500680AAC /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		04592A96253522FD00F2F3EC /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		04592A982535233E00F2F3EC /* BackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
+		04CE48D4254F5CA4009B2698 /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
+		04CE48D6254F65A1009B2698 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		A0A125862549E6B90028EF1E /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		A0A125882549EB9A0028EF1E /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		A0CF43072533AC1500680AAC /* Anatomy Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anatomy Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,8 @@
 				A0CF430E2533AC1500680AAC /* MasterViewController.swift */,
 				04592A96253522FD00F2F3EC /* FrontViewController.swift */,
 				04592A982535233E00F2F3EC /* BackViewController.swift */,
+				04CE48D4254F5CA4009B2698 /* ExerciseTableViewController.swift */,
+				04CE48D6254F65A1009B2698 /* ExerciseTableViewCell.swift */,
 				A0CF43102533AC1500680AAC /* Main.storyboard */,
 				A0CF43132533AC2000680AAC /* Assets.xcassets */,
 				A0CF43152533AC2000680AAC /* LaunchScreen.storyboard */,
@@ -272,10 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A125872549E6B90028EF1E /* RestAPI.swift in Sources */,
+				04CE48D5254F5CA4009B2698 /* ExerciseTableViewController.swift in Sources */,
 				04592A97253522FD00F2F3EC /* FrontViewController.swift in Sources */,
 				A0CF430F2533AC1500680AAC /* MasterViewController.swift in Sources */,
 				A0CF430B2533AC1500680AAC /* AppDelegate.swift in Sources */,
 				04592A992535233E00F2F3EC /* BackViewController.swift in Sources */,
+				04CE48D7254F65A1009B2698 /* ExerciseTableViewCell.swift in Sources */,
 				A0CF430D2533AC1500680AAC /* SceneDelegate.swift in Sources */,
 				A0A125892549EB9A0028EF1E /* PostList.swift in Sources */,
 			);
