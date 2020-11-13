@@ -12,6 +12,7 @@ import UIKit
 class ExerciseTableViewController: UITableViewController {
     var muscleData = ""
     var postData: [myResult] = []
+    var posts: [myResult2] = []
     override func viewDidLoad() {
         super.viewDidLoad()
            API().getExerciseByMuscle(muscle_num: muscleData) { (response) in
@@ -46,6 +47,19 @@ class ExerciseTableViewController: UITableViewController {
         
         let exercise = postData[indexPath.row]
         cell.exerciseLabel.text = exercise.name
+        //get image
+        let id = String(exercise.id)
+        let bool_check = API().getExerciseImageByExerciseID(exercise_id: id) { (response) in
+            self.posts=response.results
+        }
+        if(bool_check != false){
+            if(posts.count > 0){
+                let url = URL(string: posts[0].image)
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                cell.exerciseImage.image = UIImage(data: data!)
+            }
+        }
+        
         // Configure the cell...
 
         return cell
