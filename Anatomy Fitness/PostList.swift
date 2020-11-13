@@ -22,20 +22,24 @@ extension String {
 // This displays the results in a list
 struct PostList: View {
     // I saved the results from the REST API call into this posts variable
-    @State var posts: [myResult] = []
+    @State var posts: [myResult2] = []
     
     var body: some View {
         // This creates a list using the posts variable and sets the Text to post.name which in our case is the name of the exercise as we can see in the RESTApi.swift file
         List(posts) { post in
-            Text(post.name)
+            Text(post.image)
         }
         // On screen appear, call the API function and save the results in our posts variable
         .onAppear {
-
+    
             // Example call to API with muscle 5
-            API().getExerciseByMuscle(muscle_num: "5") { (response) in
+
+            let bool_check = API().getExerciseImageByExerciseID(exercise_id: "4444") { (response) in
                 self.posts=response.results
             }
+
+            print(bool_check)
+        
         }
     }
 }

@@ -25,11 +25,22 @@ class API {
         .resume()
     }
     
-    // Test function for images
-    func getExerciseImageByExerciseID( completion: @escaping (Response2) -> ()) {
-        guard let url = URL(string: "https://wger.de/api/v2/exerciseimage/") else { return }
+    // Function for images, returns a boolean (true if not a bad request, false if bad request)
+    func getExerciseImageByExerciseID(exercise_id: String, completion: @escaping (Response2) -> ()) -> Bool {
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
+        let sem = DispatchSemaphore.init(value: 0)
+        var return_val = true
+        
+        guard let url = URL(string: "https://wger.de/api/v2/exerciseimage/?is_main=true&exercise=" + exercise_id) else { return false }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in defer { sem.signal() }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    return_val = false
+                    return
+            }
+            
             let posts = try! JSONDecoder().decode(Response2.self, from: data!)
             
             DispatchQueue.main.async {
@@ -37,6 +48,8 @@ class API {
             }
         }
         .resume()
+        sem.wait()
+        return return_val
     }
     // More API calls can be created for more features we will add such as filtering
 }
@@ -47,14 +60,6 @@ struct Response: Codable {
     let next: String?
     let previous: String?
     let results: [myResult]
-}
-
-// Test for images
-struct Response2: Codable {
-    let count: Int
-    let next: String?
-    let previous: String?
-    let results: [myResult2]
 }
 
 // This is the JSON format of the 'results' from the Response above
@@ -75,13 +80,33 @@ struct myResult: Codable, Identifiable {
     let equipment: [Int]
 }
 
-// Test for images
+// For getting image URL
+
+struct Response2: Codable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [myResult2]
+}
+
 struct myResult2: Codable, Identifiable {
     let id: Int
-    let license_author: String
-    let status: String
+    let licenseAuthor, status: String
     let image: String
-    let is_main: Bool
-    let license: Int
-    let exercise: Int
+    let isMain: Bool
+    let license, exercise: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case licenseAuthor = "license_author"
+        case status, image
+        case isMain = "is_main"
+        case license, exercise
+    }
+}
+
+struct RestAPI_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }
