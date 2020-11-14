@@ -10,6 +10,7 @@ import UIKit
 
 
 class ExerciseTableViewController: UITableViewController {
+    var muscleNum = -1
     var muscleData = ""
     var postData: [myResult] = []
     var posts: [myResult2] = []
@@ -21,6 +22,8 @@ class ExerciseTableViewController: UITableViewController {
             self.postData=response.results
             self.tableView.reloadData()
         }
+        muscleNum = Int(muscleData) ?? 0
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,8 +63,24 @@ class ExerciseTableViewController: UITableViewController {
                 let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                 cell.exerciseImage.image = UIImage(data: data!)
             }
-            else{
+            else if(muscleNum == 4 || muscleNum == 2){
                 let image : UIImage = UIImage(named: "chest")!
+                cell.exerciseImage.image = image
+            }
+            else if(muscleNum == 1 || muscleNum == 13 || muscleNum == 5){
+                let image : UIImage = UIImage(named: "arm")!
+                cell.exerciseImage.image = image
+            }
+            else if(muscleNum == 6 || muscleNum == 14 || muscleNum == 3){
+                let image : UIImage = UIImage(named: "abs")!
+                cell.exerciseImage.image = image
+            }
+            else if(muscleNum == 8 || muscleNum == 12){
+                let image : UIImage = UIImage(named: "backer")!
+                cell.exerciseImage.image = image
+            }
+            else{
+                let image : UIImage = UIImage(named: "leg")!
                 cell.exerciseImage.image = image
             }
         }
