@@ -24,8 +24,11 @@ class DetailsViewController: UIViewController {
         exerciseName.text = postDetails[index].name
 
         exerciseImage.image = images
+        var content = postDetails[index].description
+        let a = content.replacingOccurrences(of: "<[^>]+>", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        let b = a.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
 
-        exerciseDescription.text = postDetails[index].description
+        exerciseDescription.text = b
         
         // Do any additional setup after loading the view.
     }
