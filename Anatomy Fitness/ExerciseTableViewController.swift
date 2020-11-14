@@ -13,6 +13,8 @@ class ExerciseTableViewController: UITableViewController {
     var muscleData = ""
     var postData: [myResult] = []
     var posts: [myResult2] = []
+    var indexNum = -1
+    var image1 : UIImage = UIImage(named:"chest")!
     override func viewDidLoad() {
         super.viewDidLoad()
            API().getExerciseByMuscle(muscle_num: muscleData) { (response) in
@@ -58,11 +60,31 @@ class ExerciseTableViewController: UITableViewController {
                 let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                 cell.exerciseImage.image = UIImage(data: data!)
             }
+            else{
+                let image : UIImage = UIImage(named: "chest")!
+                cell.exerciseImage.image = image
+            }
         }
+
         
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let cell = tableView.cellForRow(at: indexPath) as! ExerciseTableViewCell
+        indexNum = indexPath.row
+        image1 = cell.exerciseImage.image!
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "detailer", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! DetailsViewController
+        vc.postDetails = self.postData
+        vc.index = self.indexNum
+        vc.images = self.image1
     }
     
 
@@ -110,5 +132,6 @@ class ExerciseTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

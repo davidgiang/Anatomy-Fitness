@@ -87,10 +87,56 @@
                             <outlet property="delegate" destination="hV7-FY-SjA" id="ItD-Xi-L75"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="5KB-wH-ilU" kind="show" identifier="detailer" id="xCG-nX-Z70"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcs-gl-mcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900.0000000000002" y="93.75"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="M7Y-ms-UTG">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="5KB-wH-ilU" customClass="DetailsViewController" customModule="Anatomy_Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zqt-x7-fBi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwc-lA-JQv">
+                                <rect key="frame" x="68" y="92" width="279" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iFv-mz-zWp">
+                                <rect key="frame" x="20" y="474" width="374" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZS8-zZ-eHI">
+                                <rect key="frame" x="20" y="167" width="374" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nZJ-Sh-dzC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SUD-Sm-T6F"/>
+                    <connections>
+                        <outlet property="exerciseDescription" destination="iFv-mz-zWp" id="0sa-ly-71T"/>
+                        <outlet property="exerciseImage" destination="ZS8-zZ-eHI" id="d0C-yC-WLT"/>
+                        <outlet property="exerciseName" destination="Bwc-lA-JQv" id="yp8-fw-v6x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfc-Wr-GPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702.898550724638" y="92.410714285714278"/>
         </scene>
         <!--Back View Controller-->
         <scene sceneID="tq9-MK-ArE">
@@ -369,7 +415,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QYa-Yj-eGF"/>
+        <segue reference="XS7-2s-kFi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back" width="600" height="1000"/>
